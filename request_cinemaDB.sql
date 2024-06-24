@@ -9,9 +9,9 @@ INSERT INTO Salle (number, capacity, cinema_id) VALUES (1, 100, 2);
 INSERT INTO Film (title, duration) VALUES ('Film A', 120); 
 INSERT INTO Film (title, duration) VALUES ('Film B', 90);
 
-INSERT INTO Utilisateur (name, email, password, role, cinema_id) VALUES ('Admin', 'admin@cinema.com', 'admin_password', 'Administrateur', NULL); 
-INSERT INTO Utilisateur (name, email, password, role, cinema_id) VALUES ('User1', 'user1@cinema.com', 'user1_password', 'Utilisateur', 1); 
-INSERT INTO Utilisateur (name, email, password, role, cinema_id) VALUES ('User2', 'user2@cinema.com', 'user2_password', 'Utilisateur', 2);
+INSERT INTO Utilisateur (name, email, password, role, cinema_id) VALUES ('Admin', 'admin@cinema.com', SHA2('admin_password', 256), 'Administrateur', NULL); 
+INSERT INTO Utilisateur (name, email, password, role, cinema_id) VALUES ('User1', 'user1@cinema.com', SHA2('user1_password', 256), 'Utilisateur', 1); 
+INSERT INTO Utilisateur (name, email, password, role, cinema_id) VALUES ('User2', 'user2@cinema.com', SHA2('user2_password', 256), 'Utilisateur', 2);
 
 INSERT INTO Seances (date, time, film_id, salle_id, created_by) VALUES ('2023-07-01', '18:00:00', 1, 1, 2); 
 INSERT INTO Seances (date, time, film_id, salle_id, created_by) VALUES ('2024-06-05', '20:00:00', 2, 2, 3);
